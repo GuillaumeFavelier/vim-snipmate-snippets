@@ -1,0 +1,98 @@
+snippet pvinp
+	<InputProperty name="${1:Input}"
+		command="SetInputConnection">
+		<ProxyGroupDomain name="groups">
+			<Group name="sources"/>
+			<Group name="filters"/>
+		</ProxyGroupDomain>
+		<DataTypeDomain name="input_type">
+			<DataType value="${2:vtkDataSet}"/>
+		</DataTypeDomain>
+		<InputArrayDomain name="input_scalars"
+			number_of_components="${3:1}">
+			<Property name="$1"
+				function="FieldDataSelection" />
+		</InputArrayDomain>
+		<Documentation>
+			${4:Input to process}.
+		</Documentation>
+	</InputProperty>
+
+snippet pvdbl
+	<DoubleVectorProperty name="${1:Name}"
+		label="${2:Label}"
+		command="Set$1"
+		number_of_elements="${3:1}"
+		default_values="${4:0}"
+		panel_visibility="${5:default}">
+		<DoubleRangeDomain name="range" min="${6:0.0}" max="${7:1.0}" />
+		<Documentation>
+			${8:Documentation}.
+		</Documentation>
+	</DoubleVectorProperty>
+
+snippet pvint
+	<IntVectorProperty name="${1:Name}"
+		label="${2:Label}"
+		command="Set$1"
+		number_of_elements="${3:1}"
+		default_values="${4:0}"
+		panel_visibility="${5:default}">
+		<IntRangeDomain name="range" min="${6:0}" max="${7:100}" />
+		<Documentation>
+			${8:Documentation}.
+		</Documentation>
+	</IntVectorProperty>
+
+snippet pvbool
+	<IntVectorProperty name="${1:Name}"
+		label="${2:Label}"
+		command="Set$1"
+		number_of_elements="${3:1}"
+		default_values="${4:0}"
+		panel_visibility="${5:default}">
+		<BooleanDomain name="bool"/>
+		<Documentation>
+			${6:Documentation}.
+		</Documentation>
+	</IntVectorProperty>
+
+snippet pvstr
+	<StringVectorProperty name="${1:Name}"
+		label="${2:Label}"
+		command="Set$1"
+		number_of_elements="${3:1}"
+		default_values="${4:Value}"
+		panel_visibility="${5:default}">
+		<Documentation>
+			${6:Documentation}.
+		</Documentation>
+	</StringVectorProperty>
+
+snippet pvsca
+	<StringVectorProperty name="${1:ScalarField}"
+		label="${2:Scalar Field}">
+		command="Set$1"
+		number_of_elements="1"
+		<ArrayListDomain name="array_list"
+			default_values="0">
+			<RequiredProperties>
+				<Property name="${3:Input}" function="Input" />
+			</RequiredProperties>
+		</ArrayListDomain>
+		<Documentation>
+			${4:Documentation}.
+		</Documentation>
+	</StringVectorProperty>
+
+snippet pvprog
+	<PropertyGroup panel_widget="Line" label="${1:Label}">
+		<Property name="${2:Name}" />
+		${3}
+	</PropertyGroup>
+
+snippet pvpro
+	<Property name="${1}"/>
+
+snippet pvout
+	<OutputPort name="${1:Name}" index="${2:0}" id="port${3:0}" />

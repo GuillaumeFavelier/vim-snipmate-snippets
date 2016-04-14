@@ -1,0 +1,20 @@
+snippet vtksp
+	vtkSmartPointer<vtk${2:UnstructuredGrid}> ${1:var}=vtkSmartPointer<vtk$2>::New();
+
+snippet vtkarr
+	vtkSmartPointer<vtk${2:DoubleArray}> ${1:arr}=vtkSmartPointer<vtk$2>::New();
+	if($1){
+		$1->SetNumberOfComponents(${3:1});
+		$1->SetNumberOfTuples(${4});
+		$1->SetName("${5}");
+	}
+
+snippet vtkmac
+	vtkTemplateMacro((
+	{
+	${1}
+	}
+	))
+
+
+
