@@ -1,3 +1,12 @@
+snippet vtku
+	vtkUnstructuredGrid *${1}${0}
+
+snippet vtki
+	vtkImageData *${1}${0}
+
+snippet vtkd
+	vtk${1:Data}Array *${2}${0}
+
 snippet vtksp
 	vtkSmartPointer<vtk${2:UnstructuredGrid}> ${1:var}=vtkSmartPointer<vtk$2>::New();
 
@@ -15,6 +24,3 @@ snippet vtkmac
 	${1}
 	}
 	))
-
-
-
