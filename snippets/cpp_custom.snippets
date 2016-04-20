@@ -12,13 +12,19 @@ snippet ffor
 ## Accessor
 # Get
 snippet get
-	inline const ${2:auto} get${1:Var}(${3:void}) ${4:const}
+	inline const ${2:auto} get${1/\\([a-zA-Z]*\\)\\(_*\\)/\\u\\1/g}(${3:void}) ${4:const}
 	{
-	  return ${5};
+	  return ${1:Var};
+	}
+snippet is
+	inline const bool is${1/\\([a-zA-Z]*\\)\\(_*\\)/\\u\\1/g}(${2:void}) const
+	{
+	  return ${1:Var};
+	}
+# Set
+snippet set
+	inline void set${1/\\([a-zA-Z]*\\)\\(_*\\)/\\u\\1/g}(const ${2:type}  &local_${1/\\([a-zA-Z]*\\)\\(_*\\)/\\1/g})
+	{
+	  ${1:Var} = local_${1/\\([a-zA-Z]*\\)\\(_*\\)/\\1/g};
 	}
 
-snippet is
-	inline const bool is${1:Var}(${2:void}) const
-	{
-	  return ${3};
-	}
