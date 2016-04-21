@@ -1,7 +1,12 @@
+### Correction
 # just for override the default cpp #include snippet over the c one
 snippet! inc
 	#include<${1:iostream}>
-
+# ovveride the cout to avoid the std::
+snippet! cout
+	cout << ${1} << endl;
+### Snippets
+##Loop
 # 2 nested for-loops where i and j both increases
 snippet ffor
 	for (${1:int} ${2:i}=0; $2<${4:M}; $2++) {
@@ -9,7 +14,6 @@ snippet ffor
 			${6}
 		}
 	}
-
 # 3 nested for-loops where i,j and k increases
 snippet fffor
 	for (${1:int} ${2:i}=0; $2<${5:L}; $2++) {
@@ -19,21 +23,19 @@ snippet fffor
 			}
 		}
 	}
-
+## Accessors
 # Get accessor
 snippet get
 	inline const ${2:auto} get${1/\\([a-zA-Z]*\\)\\(_*\\)/\\u\\1/g}(${3:void}) ${4:const}
 	{
 	  return ${1:Var};
 	}
-
 # Bool accessor
 snippet is
 	inline const bool is${1/\\([a-zA-Z]*\\)\\(_*\\)/\\u\\1/g}(${2:void}) const
 	{
 	  return ${1:Var};
 	}
-
 # Set accessor
 snippet set
 	inline void set${1/\\([a-zA-Z]*\\)\\(_*\\)/\\u\\1/g}(const ${2:type}  &local_${1/\\([a-zA-Z]*\\)\\(_*\\)/\\1/g})
