@@ -74,19 +74,19 @@ snippet fffor
 		}
 	}
 # Get accessor
-snippet get
+snippet getvar
 	inline const ${2:auto} get${1/\\([a-zA-Z]*\\)\\(_*\\)/\\u\\1/g}(${3:void}) ${4:const}
 	{
 	  return ${1:Var};
 	}
 # Bool accessor
-snippet is
+snippet isvar
 	inline const bool is${1/\\([a-zA-Z]*\\)\\(_*\\)/\\u\\1/g}(${2:void}) const
 	{
 	  return ${1:Var};
 	}
 # Set accessor
-snippet set
+snippet setvar
 	inline void set${1/\\([a-zA-Z]*\\)\\(_*\\)/\\u\\1/g}(const ${2:type}  &local_${1/\\([a-zA-Z]*\\)\\(_*\\)/\\1/g})
 	{
 	  ${1:Var} = local_${1/\\([a-zA-Z]*\\)\\(_*\\)/\\1/g};
