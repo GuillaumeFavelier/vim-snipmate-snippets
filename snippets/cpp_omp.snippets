@@ -4,6 +4,12 @@ snippet ompf
 		${5}
 	}
 
+snippet ompfi
+	#pragma omp parallel for
+	for (int ${3:i} = 0; $3 < ${2:count}; $3${4:++}) {
+		${5}
+	}
+
 snippet ompfn
 	#pragma omp parallel for num_threads(${1})
 	for (${3:i} = 0; $3 < ${2:count}; $3${4:++}) {
