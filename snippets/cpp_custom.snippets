@@ -92,3 +92,13 @@ snippet setvar
 	{
 	  ${1:Var} = local_${1/\\([a-zA-Z]*\\)\\(_*\\)/\\1/g};
 	}
+# Print Pointer Container elements
+snippet ppstl
+	cout << "$1 :" << endl;
+	copy(${1:var}->cbegin(),$1->cend(),ostream_iterator<${2:int}>(${3:cout}," "));
+	cout << endl;
+# Print Container elements
+snippet pstl
+	cout << "$1 :" << endl;
+	copy(${1:var}.cbegin(),$1.cend(),ostream_iterator<${2:int}>(${3:cout}," "));
+	cout << endl;
