@@ -2,62 +2,79 @@
 # just for override the default cpp #include snippet over the c one
 snippet! inc
 	#include<${1:iostream}>
+	${0}
 ## STL Collections
 # array
 snippet! array
 	array<${1:T}, ${2:N}> ${3};
+	${0}
 # vector
 snippet! vector
 	vector<${1:T}> ${2};
+	${0}
 # deque
 snippet! deque
 	deque<${1:T}> ${2};
+	${0}
 # forward_list
 snippet! flist
 	forward_list<${1:T}> ${2};
+	${0}
 # list
 snippet! list
 	list<${1:T}> ${2};
+	${0}
 # set
 snippet! set
 	set<${1:T}> ${2};
+	${0}
 # map
 snippet! map
 	map<${1:Key}, ${2:T}> ${3};
+	${0}
 # multiset
 snippet! mset
 	multiset<${1:T}> ${2};
+	${0}
 # multimap
 snippet! mmap
 	multimap<${1:Key}, ${2:T}> ${3};
+	${0}
 # unordered_set
 snippet! uset
 	unordered_set<${1:T}> ${2};
+	${0}
 # unordered_map
 snippet! umap
 	unordered_map<${1:Key}, ${2:T}> ${3};
+	${0}
 # unordered_multiset
 snippet! umset
 	unordered_multiset<${1:T}> ${2};
+	${0}
 # unordered_multimap
 snippet! ummap
 	unordered_multimap<${1:Key}, ${2:T}> ${3};
+	${0}
 # stack
 snippet! stack
 	stack<${1:T}> ${2};
+	${0}
 # queue
 snippet! queue
 	queue<${1:T}> ${2};
+	${0}
 # priority_queue
 snippet! pqueue
 	priority_queue<${1:T}> ${2};
+	${0}
 ## Input/Output
 # cout
 snippet! cout
-	cout << ${1} << endl;
+	cout << ${0} << endl;
 # cin
 snippet! cin
-	cin >> ${1};
+	cin >> ${0};
 ## Functions
 # Get accessor
 snippet getvar
